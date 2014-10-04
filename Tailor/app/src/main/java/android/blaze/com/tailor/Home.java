@@ -1,9 +1,12 @@
 package android.blaze.com.tailor;
 
 import android.app.Activity;
+import android.blaze.com.tailor.content.Selection;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class Home extends Activity {
@@ -32,5 +35,10 @@ public class Home extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    public void login(View view){
+        Intent mainIntent = new Intent(Home.this,Selection.class);
+        Home.this.startActivity(mainIntent);
+        Home.this.finish();
     }
 }

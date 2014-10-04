@@ -7,12 +7,12 @@
 
     <ImageView
         android:id="@+id/ivLogo"
-        android:paddingTop="98dp"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/logo"/>
     <Button
+        android:onClick="login"
         android:layout_marginTop="55dp"
         android:id="@+id/btLogin"
         android:layout_centerHorizontal="true"
