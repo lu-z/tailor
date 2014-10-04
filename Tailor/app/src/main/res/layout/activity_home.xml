@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="android.blaze.com.tailor.Home"
+    android:background="@drawable/background">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:paddingTop="98dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"/>
+    <Button
+        android:layout_marginTop="55dp"
+        android:id="@+id/btLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/ivLogo"
+        android:background="@drawable/login_button"
+        android:textColor="@color/white"
+        android:text="Login"
+        android:typeface="normal"
+        android:layout_width="194dp"
+        android:layout_height="44dp" />
+
+    <Button
+        android:layout_marginTop="29dp"
+        android:id="@+id/btSignUp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/btLogin"
+        android:background="@drawable/signup_button"
+        android:textColor="@color/signup"
+        android:text="Sign up"
+        android:typeface="normal"
+        android:layout_width="194dp"
+        android:layout_height="44dp" />
+
+
+</RelativeLayout>
