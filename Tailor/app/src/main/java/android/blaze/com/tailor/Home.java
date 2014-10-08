@@ -1,7 +1,7 @@
 package android.blaze.com.tailor;
 
 import android.app.Activity;
-import android.blaze.com.tailor.content.Selection;
+import android.blaze.com.tailor.content.SelectionActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -37,7 +37,7 @@ public class Home extends Activity {
         return super.onOptionsItemSelected(item);
     }
     public void login(View view){
-        Intent mainIntent = new Intent(Home.this,Selection.class);
+        Intent mainIntent = new Intent(Home.this,SelectionActivity.class);
         Home.this.startActivity(mainIntent);
         Home.this.finish();
     }

@@ -10,6 +10,7 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -33,6 +34,7 @@ public class HttpRequestController {
 
 
     public String get(String kBaseEndpoint){
+    	System.out.println("ENDPOINT: " + kBaseEndpoint);
         StringBuffer response = null;
         HttpURLConnection conn = null;
         URL obj;
@@ -83,6 +85,42 @@ public class HttpRequestController {
         return response;
 
     }
+    
+    public String postJSONObject(String kBaseEndpoint, Map<String, JSONObject> data){    	
+        // Create a new HttpClient and Post Header
+        HttpClient httpclient = new DefaultHttpClient();
+        HttpPost httppost = new HttpPost(kBaseEndpoint);
+
+        try {
+            // Add your data
+            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+            for (Map.Entry<String, JSONObject> entry : data.entrySet()) {
+                String key = entry.getKey();
+                JSONObject value = entry.getValue();
+                nameValuePairs.add(new BasicNameValuePair(key, value.toString()));
+            }
+            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+            // Execute HTTP Post Request
+            StringBuilder sb=new StringBuilder();
+            HttpResponse response = httpclient.execute(httppost);
+            InputStream in = response.getEntity().getContent();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+            String line = null;
+            while((line = reader.readLine()) != null){
+                sb.append(line);
+            }
+            Log.d("response in Post method", sb.toString() + "");
+
+            return sb.toString();
+
+        } catch (ClientProtocolException e) {
+            // TODO Auto-generated catch block
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+        }
+        return null;
+    }
 
 
     public String post(String kBaseEndpoint, Map<String, String> data){
@@ -98,7 +136,6 @@ public class HttpRequestController {
                 String value = entry.getValue();
                 nameValuePairs.add(new BasicNameValuePair(key, value));
             }
-            System.out.println(nameValuePairs);
             httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
             // Execute HTTP Post Request
@@ -155,6 +192,6 @@ public class HttpRequestController {
         }
     }
 
-
 }
+
 

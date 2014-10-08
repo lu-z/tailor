@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100px"
+    android:background="@color/brown"
+
+    >
+    <TextView
+        android:layout_centerVertical="true"
+        android:id="@+id/tvFirstStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20px"
+        android:text="satin"
+        android:textColor="@color/white"/>
+    <View
+        android:id="@+id/separateOne"
+        android:layout_toRightOf="@id/tvFirstStyle"
+        android:layout_width="10px"
+        android:layout_height="10px"
+        android:layout_centerVertical="true"
+        android:background="@color/white"
+        />
+    <TextView
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/separateOne"
+        android:id="@+id/tvSecondStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="skirt"
+        android:padding="20px"
+        android:textColor="@color/white"/>
+    <View
+        android:layout_toRightOf="@id/tvSecondStyle"
+        android:id="@+id/separateTwo"
+        android:layout_width="10px"
+        android:layout_height="10px"
+        android:layout_centerVertical="true"
+        android:background="@color/white"
+        />
+    <TextView
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/separateTwo"
+        android:id="@+id/tvThirdStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sheith"
+        android:padding="20px"
+        android:textColor="@color/white"/>
+
+</RelativeLayout>

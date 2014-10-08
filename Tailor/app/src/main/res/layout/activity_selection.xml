@@ -1,44 +1,83 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="android.blaze.com.tailor.content.Selection">
-    <RelativeLayout
-        android:id="@+id/testLayout"
-        android:layout_width="match_parent"
-        android:layout_height="1000px"
-        android:background="@color/brown"
-        >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="100px"
-            android:background="@color/brown"
-            android:text="Hello"/>
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF" >
 
-
-        </RelativeLayout>
     <ImageView
-        android:layout_below="@id/testLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/homebar"
-        android:onClick="collapseButton"/>
-    <Button
-        android:id="@+id/btExpand"
-        android:layout_below="@id/testLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="expand"
-        android:visibility="gone"
-        android:onClick="expandButton"/>
-    <Button
-        android:layout_toRightOf="@+id/btExpand"
-        android:layout_below="@id/testLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:text="collaspe"
-        android:onClick="collapseButton"/>
+        android:id="@+id/iv_item"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="fitCenter" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <include
+            android:layout_width="wrap_content"
+            android:layout_height="0px"
+            layout="@layout/activity_menu"
+            android:id="@+id/testLayout" />
+        <ImageView
+            android:layout_below="@id/testLayout"
+            android:id="@+id/homebar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/homebar"
+            android:alpha="0"
+            android:onClick="expandButton"/>
+
+        <ImageView
+            android:layout_below="@id/testLayout"
+            android:id="@+id/backbar"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/homebar"
+            android:onClick="collapseButton"/>
 
 
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/iv_like"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/yes"
+            android:alpha="0"/>
+
+        <ImageView
+            android:id="@+id/iv_dislike"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/no"
+            android:alpha="0" />
+
+        <LinearLayout
+            android:id="@+id/lv_footer"
+            android:layout_width="fill_parent"
+            android:layout_height="75dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/selection_name_gradient"
+            android:orientation="horizontal"
+            android:alpha="0"
+            android:weightSum="10" >
+
+            <TextView
+                android:id="@+id/tv_item_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#FF000000"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>

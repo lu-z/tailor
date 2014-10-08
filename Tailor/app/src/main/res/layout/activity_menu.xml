@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/testLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/brown"
+    >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivCover"
+        android:src="@drawable/cover"/>
+    <ImageView
+        android:layout_below="@id/ivCover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivProfile"
+        android:src="@drawable/profile"
+        android:padding="30px"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivProfile"
+        android:id="@+id/tvName"
+
+        android:layout_below="@id/ivCover"
+        android:textColor="@color/white"
+        android:paddingLeft="40px"
+        android:paddingTop="30px"
+        android:textSize="30dp"
+        android:text="Lancy Zhang"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivProfile"
+        android:id="@+id/tvGender"
+        android:layout_below="@id/tvName"
+        android:textColor="@color/white"
+        android:paddingLeft="40px"
+        android:text="Female"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivProfile"
+        android:layout_below="@+id/tvGender"
+        android:id="@+id/tvAge"
+        android:textColor="@color/white"
+        android:paddingLeft="40px"
+        android:text="18"/>
+
+
+    <ExpandableListView
+        android:layout_below="@id/ivProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/elvMenu"
+        android:groupIndicator="@null"
+        />
+</RelativeLayout>

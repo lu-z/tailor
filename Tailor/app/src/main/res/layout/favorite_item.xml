@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/brown"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:id="@+id/tvFirstBrand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20px"
+        android:text="No brands yet"
+        android:textColor="@color/white"/>
+    <TextView
+        android:layout_below="@id/tvFirstBrand"
+        android:id="@+id/tvSecondBrand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:padding="20px"
+        android:textColor="@color/white"/>
+    <TextView
+        android:layout_below="@id/tvSecondBrand"
+        android:id="@+id/tvThirdBrand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:padding="20px"
+        android:textColor="@color/white"/>
+
+</RelativeLayout>
